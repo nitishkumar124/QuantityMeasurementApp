@@ -54,6 +54,32 @@ public class Length {
 
 		return new Length(convertedValue, targetUnit);
 	}
+	
+	public Length add(Length other) {
+
+	    if (other == null) {
+	        throw new IllegalArgumentException("Length to add cannot be null");
+	    }
+
+	    if (this.unit == null || other.unit == null) {
+	        throw new IllegalArgumentException("Length unit cannot be null");
+	    }
+
+	    if (!Double.isFinite(this.value) || !Double.isFinite(other.value)) {
+	        throw new IllegalArgumentException("Length values must be finite numbers");
+	    }
+
+	    double thisBase = this.convertToBaseUnit();
+	    double otherBase = other.convertToBaseUnit();
+
+	    double sumBase = thisBase + otherBase;
+
+	    double resultValue = sumBase / this.unit.getConversionFactor();
+
+	    resultValue = Math.round(resultValue * 100.0) / 100.0;
+
+	    return new Length(resultValue, this.unit);
+	}
 
 	@Override
 	public boolean equals(Object o) {
