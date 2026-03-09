@@ -1,12 +1,30 @@
 package com;
 
+@FunctionalInterface
+interface SupportsArithmetic {
+	boolean isSupported();
+}
+
 public interface IMeasurable {
 
-    double getConversionFactor();
+	double getConversionFactor();
 
-    double convertToBaseUnit(double value);
+	double convertToBaseUnit(double value);
 
-    double convertFromBaseUnit(double baseValue);
+	double convertFromBaseUnit(double baseValue);
 
-    String getUnitName();
+	String getUnitName();
+
+	SupportsArithmetic supportsArithmetic = () -> true;
+
+	default boolean supportsArithmetic() {
+		return supportsArithmetic.isSupported();
+	}
+
+	default void validateOperationSupport(String operation) {
+		if (!supportsArithmetic()) {
+			throw new UnsupportedOperationException(
+					"Operation " + operation + " not supported for this measurement type");
+		}
+	}
 }
