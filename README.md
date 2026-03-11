@@ -92,3 +92,21 @@ This Use Case refactors the existing Feet and Inches classes into a single gener
 - https://github.com/nitishkumar124/QuantityMeasurementApp/tree/feature/UC11-VolumeMeasurement
 
 ---
+
+**UC12: Subtraction and Division Operations on Quantity Measurements**
+- UC12 extends the Quantity Measurement Application by introducing two new arithmetic operations—subtraction and division—to the generic Quantity<U> class. Building on the foundation of equality comparison, unit conversion, and addition from UC1–UC11, this use case enables more comprehensive arithmetic manipulation of measurements.
+- https://github.com/nitishkumar124/QuantityMeasurementApp/tree/feature/UC12-SubtractionDivision
+
+---
+
+**UC13: Centralized Arithmetic Logic to Enforce DRY in Quantity Operations**
+- UC13 refactors the arithmetic operations (addition, subtraction, division) implemented in UC12 to eliminate code duplication and enforce the DRY (Don't Repeat Yourself) principle. Instead of repeating unit conversion, base-unit normalization, and validation logic across multiple arithmetic methods, this use case introduces a centralized private helper method that encapsulates all common arithmetic logic.
+- https://github.com/nitishkumar124/QuantityMeasurementApp/tree/feature/UC13-CentralizedArithmeticLogic
+
+---
+
+**UC14: Temperature Measurement with Selective Arithmetic Support and IMeasurable Refactoring**
+- UC14 extends the Quantity Measurement Application to support temperature measurements alongside length, weight, and volume. Unlike these three categories, which support full arithmetic operations (addition, subtraction, division), temperature presents a unique challenge: temperature differences can be added or subtracted, but individual temperature values cannot be meaningfully multiplied or divided in most practical contexts.
+- https://github.com/nitishkumar124/QuantityMeasurementApp/tree/feature/UC14-TemperatureMeasurement
+
+---
