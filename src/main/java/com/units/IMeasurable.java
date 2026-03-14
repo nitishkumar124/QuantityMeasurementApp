@@ -1,4 +1,4 @@
-package com;
+package com.units;
 
 @FunctionalInterface
 interface SupportsArithmetic {
@@ -27,4 +27,8 @@ public interface IMeasurable {
 					"Operation " + operation + " not supported for this measurement type");
 		}
 	}
+
+	String getMeasurementType();
+	
+	IMeasurable getUnitInstance(String unitName);
 }
