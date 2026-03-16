@@ -1,10 +1,9 @@
-package com.entity;
+package com.app.quantitymeasurement.entity;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-import com.units.IMeasurable;
-import com.dto.QuantityModel;
+import com.app.quantitymeasurement.unit.IMeasurable;
 
 public class QuantityMeasurementEntity implements Serializable {
 
@@ -28,7 +27,10 @@ public class QuantityMeasurementEntity implements Serializable {
 	public boolean isError;
 	public String errorMessage;
 
-	private QuantityMeasurementEntity(QuantityModel<IMeasurable> thisQuantity, QuantityModel<IMeasurable> thatQuantity,
+	public QuantityMeasurementEntity() {
+	}
+	
+	public QuantityMeasurementEntity(QuantityModel<IMeasurable> thisQuantity, QuantityModel<IMeasurable> thatQuantity,
 			String operation) {
 
 		this.thisValue = thisQuantity.getValue();

@@ -1,8 +1,8 @@
-package com.repository;
+package com.app.quantitymeasurement.repository;
 
 import java.util.List;
 
-import com.entity.QuantityMeasurementEntity;
+import com.app.quantitymeasurement.entity.QuantityMeasurementEntity;
 
 /**
  * Data access contract — ISP: only exposes what is needed.

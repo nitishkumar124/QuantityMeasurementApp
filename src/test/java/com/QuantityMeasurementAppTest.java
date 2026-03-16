@@ -5,17 +5,17 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.controller.QuantityMeasurementController;
-import com.dto.QuantityDTO;
-import com.dto.QuantityModel;
-import com.entity.QuantityMeasurementEntity;
-import com.exception.QuantityMeasurementException;
-import com.repository.IQuantityMeasurementRepository;
-import com.repository.QuantityMeasurementCacheRepository;
-import com.service.IQuantityMeasurementService;
-import com.service.QuantityMeasurementServiceImpl;
-import com.units.IMeasurable;
-import com.units.LengthUnit;
+import com.app.quantitymeasurement.controller.QuantityMeasurementController;
+import com.app.quantitymeasurement.entity.QuantityDTO;
+import com.app.quantitymeasurement.entity.QuantityMeasurementEntity;
+import com.app.quantitymeasurement.entity.QuantityModel;
+import com.app.quantitymeasurement.exception.QuantityMeasurementException;
+import com.app.quantitymeasurement.repository.IQuantityMeasurementRepository;
+import com.app.quantitymeasurement.repository.QuantityMeasurementCacheRepository;
+import com.app.quantitymeasurement.service.IQuantityMeasurementService;
+import com.app.quantitymeasurement.service.QuantityMeasurementServiceImpl;
+import com.app.quantitymeasurement.unit.IMeasurable;
+import com.app.quantitymeasurement.unit.LengthUnit;
 
 public class QuantityMeasurementAppTest {
 

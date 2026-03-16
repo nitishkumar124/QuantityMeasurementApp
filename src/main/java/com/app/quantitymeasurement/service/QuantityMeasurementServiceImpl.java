@@ -1,15 +1,15 @@
-package com.service;
+package com.app.quantitymeasurement.service;
 
-import com.dto.QuantityDTO;
-import com.dto.QuantityModel;
-import com.entity.QuantityMeasurementEntity;
-import com.exception.QuantityMeasurementException;
-import com.repository.IQuantityMeasurementRepository;
-import com.units.IMeasurable;
-import com.units.LengthUnit;
-import com.units.TemperatureUnit;
-import com.units.VolumeUnit;
-import com.units.WeightUnit;
+import com.app.quantitymeasurement.entity.QuantityDTO;
+import com.app.quantitymeasurement.entity.QuantityMeasurementEntity;
+import com.app.quantitymeasurement.entity.QuantityModel;
+import com.app.quantitymeasurement.exception.QuantityMeasurementException;
+import com.app.quantitymeasurement.repository.IQuantityMeasurementRepository;
+import com.app.quantitymeasurement.unit.IMeasurable;
+import com.app.quantitymeasurement.unit.LengthUnit;
+import com.app.quantitymeasurement.unit.TemperatureUnit;
+import com.app.quantitymeasurement.unit.VolumeUnit;
+import com.app.quantitymeasurement.unit.WeightUnit;
 
 public class QuantityMeasurementServiceImpl implements IQuantityMeasurementService {
 

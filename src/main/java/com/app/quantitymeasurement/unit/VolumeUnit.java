@@ -1,15 +1,18 @@
-package com.units;
+package com.app.quantitymeasurement.unit;
 
-public enum WeightUnit implements IMeasurable{
-	KILOGRAMS(1.0),
-	GRAMS(0.001),
-	POUNDS(0.453592);
+public enum VolumeUnit implements IMeasurable{
+	LITRE(1.0),   //base unit 
+	MILLILITRE(0.001),
+	GALLON(3.78541);
 	
 	private final double conversionFactor;
 	
-	WeightUnit(double value) {
-		this.conversionFactor=value;
+	VolumeUnit(double converisonFactor){
+		this.conversionFactor=converisonFactor;
 	}
+	
+
+	
 	
 	public double getConversionFactor() {
 		return conversionFactor;
@@ -22,24 +25,24 @@ public enum WeightUnit implements IMeasurable{
     public double convertFromBaseUnit(double baseValue) {
         return baseValue / conversionFactor;
     }
-;
+
 	@Override
 	public String getUnitName() {
 		return this.toString();
 	}
 	
-	 // UC15
-    @Override
-    public String getMeasurementType() { 
-    	return this.getClass().getSimpleName();
-    	}
+	@Override
+	public String getMeasurementType() {
+		return this.getClass().getSimpleName();
+	}
 
-    // UC15
-    @Override
+	
+	@Override
     public IMeasurable getUnitInstance(String unitName) {
-        for (WeightUnit unit : WeightUnit.values()) {
+        for (VolumeUnit unit : VolumeUnit.values()) {
             if (unit.getUnitName().equalsIgnoreCase(unitName)) return unit;
         }
-        throw new IllegalArgumentException("Invalid temperature unit: " + unitName);
+        throw new IllegalArgumentException("Invalid length unit: " + unitName);
     }
+
 }
