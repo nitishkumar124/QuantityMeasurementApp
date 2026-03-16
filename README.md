@@ -7,12 +7,37 @@
 QuantityMeasurementApp/
 ├── src
 |   ├── main
-|   |  ├── QuantityMeasurementApp
-|   |  ├── IMeasurable
-|   |  ├── LengthUnit
-|   |  ├── Quantity
-|   |  ├── VolumeUnit
-|   |  └── WeightUnit
+|   |   ├── app
+|   |   |   ├── QuantityMeasurementApp
+|   |   |   ├── controller
+|   |   |   |   └── QuantityMeasurementController
+|   |   |   ├── entity
+|   |   |   |   ├── QuantityDTO
+|   |   |   |   ├── QuantityMeasurementEntity
+|   |   |   |   └── QuantityModel
+|   |   |   ├── exception
+|   |   |   |   ├── DatabaseException
+|   |   |   |   └── QuantityMeasurementExcepition
+|   |   |   ├── repository
+|   |   |   |   ├── IQuantityMeasurementRepository
+|   |   |   |   ├── QuantityMeasurementDatabaseRepository
+|   |   |   |   └── QuantityMeasurementCacheRepository
+|   |   |   ├── service
+|   |   |   |   ├── IQuantityMeasurementService
+|   |   |   |   └── QuantityMeasurementServiceImpl
+|   |   |   ├── unit
+|   |   |   |   ├── IMeasurable
+|   |   |   |   ├── LengthUnit
+|   |   |   |   ├── Quantity
+|   |   |   |   ├── VolumeUnit
+|   |   |   |   └── WeightUnit
+|   |   |   ├── util
+|   |   |   |   ├── ApplicationConfig
+|   |   |   |   └── ConnectionPool
+|   |   └── resources
+|   |       ├── db
+|   |       |    └── schema.sql
+|   |       └── application.properties
 |   └── test
 |       └── QuantityMeasurementAppTest
 ├── target
@@ -108,5 +133,17 @@ This Use Case refactors the existing Feet and Inches classes into a single gener
 **UC14: Temperature Measurement with Selective Arithmetic Support and IMeasurable Refactoring**
 - UC14 extends the Quantity Measurement Application to support temperature measurements alongside length, weight, and volume. Unlike these three categories, which support full arithmetic operations (addition, subtraction, division), temperature presents a unique challenge: temperature differences can be added or subtracted, but individual temperature values cannot be meaningfully multiplied or divided in most practical contexts.
 - https://github.com/nitishkumar124/QuantityMeasurementApp/tree/feature/UC14-TemperatureMeasurement
+
+---
+
+**UC15: N-Tier Architecture Refactoring for Quantity Measurement Application**
+- UC15 refactors the monolithic Quantity Measurement Application into a professional N-Tier architecture by separating concerns into distinct layers: Controller Layer, Service Layer, and Entity/Model Layer. This architectural shift transforms the standalone application from a single-responsibility class into a scalable, maintainable system that adheres to SOLID principles and industry best practices.
+- https://github.com/nitishkumar124/QuantityMeasurementApp/tree/feature/UC15-N-TierArchitecture
+
+---
+
+**UC16: Database Integration with JDBC for Quantity Measurement Persistence**
+- UC16 extends the Quantity Measurement Application by introducing persistent database storage through JDBC (Java Database Connectivity). Building upon the N-Tier architecture established in UC15, this use case implements a QuantityMeasurementDatabaseRepository class that replaces the in-memory QuantityMeasurementCacheRepository for long-term data persistence. The application now supports storing and retrieving quantity measurement operation history from a relational database, enabling audit trails, reporting, and historical analysis.
+- https://github.com/nitishkumar124/QuantityMeasurementApp/tree/feature/UC16-DatabaseIntegration
 
 ---
