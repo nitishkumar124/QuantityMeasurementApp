@@ -18,7 +18,8 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         // ✅ IMPORTANT FIX
-        config.setAllowedOriginPatterns(Arrays.asList("http://localhost:5173"));
+//        config.setAllowedOriginPatterns(Arrays.asList("http://localhost:5173"));
+        config.setAllowedOriginPatterns(Arrays.asList("*"));
 
         // Allow all headers
         config.setAllowedHeaders(Arrays.asList("*"));
