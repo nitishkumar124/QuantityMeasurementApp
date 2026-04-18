@@ -31,7 +31,7 @@ public class UnitRegistry {
         for (Class<? extends Enum<?>> category : unitCategories) {
             try {
                 // Java Enums have a built-in valueOf method
-                return (IMeasurable) Enum.valueOf((Class<Enum>) category, searchName);
+                return (IMeasurable) Enum.valueOf((Class<? extends Enum<?>>) category, searchName);
             } catch (IllegalArgumentException ignored) {
                 // Move to the next category if not found in this one
             }
