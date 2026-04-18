@@ -35,7 +35,7 @@ public class QuantityMeasurementServiceImpl implements IQuantityMeasurementServi
 	private void saveHistory(String userEmail, String operation, Object input, String resultValue) {
 
 		try {
-			String url = "http://history-service/history/save";
+			String url = "http://HISTORY-SERVICE/history/save";
 
 			String inputJson = objectMapper.writeValueAsString(input);
 //			String email = request.getHeader("X-User-Email");
